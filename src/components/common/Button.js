@@ -14,9 +14,9 @@ const Button = styled.button`
     &:hover {
       background: #1976d2;
     }
-    `}
+  `}
 
-    ${props => props.danger && css`
+  ${props => props.danger && css`
     background: #f44336;
     &:hover {
       background: #d32f2f;
