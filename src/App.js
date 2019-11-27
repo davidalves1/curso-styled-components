@@ -4,8 +4,13 @@ import Button from './components/common/Button';
 
 function App() {
   return (
-    <div className="App">
-      <Button>
+    <div style={{
+      margin: '1rem',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center'
+    }}>
+      <Button primary>
         Hello Styled!
       </Button>
     </div>
