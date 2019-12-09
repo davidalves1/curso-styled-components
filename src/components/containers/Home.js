@@ -4,6 +4,7 @@ export default styled.main`
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding-top: 2rem;
   width: 100vw;
   height: 100vh;
   background: ${props => props.theme.backgroundColor};

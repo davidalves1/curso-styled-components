@@ -5,6 +5,7 @@ import LightTheme from './themes/light';
 import DarkTheme from './themes/dark';
 import Home from './components/containers/Home';
 import Button from './components/common/Button';
+import PasswordInput from './components/common/PasswordInput';
 
 function App() {
   const [theme, setTheme] = useState(DarkTheme);
@@ -22,6 +23,7 @@ function App() {
         <Button primary onClick={ () => handleToggleLights() }>
           Toggle Lights
         </Button>
+        <PasswordInput />
       </Home>
     </ThemeProvider>
   );
