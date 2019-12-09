@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
+import { Button } from 'reactstrap';
 
 import LightTheme from './themes/light';
 import DarkTheme from './themes/dark';
 import Home from './components/containers/Home';
-import Button from './components/common/Button';
+import PrimaryButton from './components/common/PrimaryButton';
 import PasswordInput from './components/common/PasswordInput';
 
 function App() {
@@ -27,13 +28,13 @@ function App() {
     <ThemeProvider theme={theme}>
       <Home>
         <h1>Testing themes</h1>
-        <Button primary onClick={ () => handleToggleLights() }>
+        <Button color="primary" onClick={ () => handleToggleLights() }>
           Toggle Lights
         </Button>
         <PasswordInput show={showPasword} />
-        <Button onClick={ () => handleTogglePasswordVisibility() }>
+        <PrimaryButton onClick={ () => handleTogglePasswordVisibility() }>
           { showPasword ? 'Hide Password' : 'Show Password' }
-        </Button>
+        </PrimaryButton>
       </Home>
     </ThemeProvider>
   );
