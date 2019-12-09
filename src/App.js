@@ -9,11 +9,18 @@ import PasswordInput from './components/common/PasswordInput';
 
 function App() {
   const [theme, setTheme] = useState(DarkTheme);
+  const [showPasword, setShowPassword] = useState(false);
 
   function handleToggleLights() {
     const newTheme = theme.id === 'light' ? DarkTheme : LightTheme;
 
     setTheme(newTheme);
+  }
+
+  function handleTogglePasswordVisibility() {
+    const passwordVisbility = !showPasword;
+
+    setShowPassword(passwordVisbility);
   }
 
   return (
@@ -23,7 +30,10 @@ function App() {
         <Button primary onClick={ () => handleToggleLights() }>
           Toggle Lights
         </Button>
-        <PasswordInput />
+        <PasswordInput show={showPasword} />
+        <Button onClick={ () => handleTogglePasswordVisibility() }>
+          { showPasword ? 'Hide Password' : 'Show Password' }
+        </Button>
       </Home>
     </ThemeProvider>
   );

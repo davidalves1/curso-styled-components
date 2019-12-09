@@ -6,11 +6,16 @@ const Button = styled.button`
   padding: 10px;
   background: #efefef;
   font-size: 20px;
-  color: #fff;
+  color: #333;
   cursor: pointer;
   transition: ease .3s;
+  border: 1px solid #bcbcbc;
+  &:hover {
+    background: #bcbcbc;
+  }
 
   ${props => props.primary && css`
+    color: #fff;
     border: 1px solid #1976d2;
     background: #2196f3;
     &:hover {
@@ -19,7 +24,8 @@ const Button = styled.button`
   `}
 
   ${props => props.danger && css`
-  border: 1px solid #d32f2f;
+    color: #fff;
+    border: 1px solid #d32f2f;
     background: #f44336;
     &:hover {
       background: #d32f2f;
