@@ -7,6 +7,13 @@ import DarkTheme from './themes/dark';
 import Home from './components/containers/Home';
 import PrimaryButton from './components/common/PrimaryButton';
 import PasswordInput from './components/common/PasswordInput';
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: ${props => props.theme.id === 'light' ? 'Times New Roman' : 'Helvetica'} !important;
+  }
+`;
 
 function App() {
   const [theme, setTheme] = useState(DarkTheme);
@@ -36,6 +43,7 @@ function App() {
           { showPasword ? 'Hide Password' : 'Show Password' }
         </PrimaryButton>
       </Home>
+      <GlobalStyle />
     </ThemeProvider>
   );
 }
