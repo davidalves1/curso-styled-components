@@ -8,6 +8,7 @@ import Home from './components/containers/Home';
 import PrimaryButton from './components/common/PrimaryButton';
 import PasswordInput from './components/common/PasswordInput';
 import { createGlobalStyle } from 'styled-components';
+import Spinner from './components/common/Spinner';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -18,11 +19,14 @@ const GlobalStyle = createGlobalStyle`
 function App() {
   const [theme, setTheme] = useState(DarkTheme);
   const [showPasword, setShowPassword] = useState(false);
+  const [spinnerInverse, setSpinnerInverse] = useState(false);
 
   function handleToggleLights() {
     const newTheme = theme.id === 'light' ? DarkTheme : LightTheme;
+    const spinerSide = !spinnerInverse;
 
     setTheme(newTheme);
+    setSpinnerInverse(spinerSide);
   }
 
   function handleTogglePasswordVisibility() {
@@ -42,6 +46,7 @@ function App() {
         <PrimaryButton onClick={ () => handleTogglePasswordVisibility() }>
           { showPasword ? 'Hide Password' : 'Show Password' }
         </PrimaryButton>
+        <Spinner inverse={ spinnerInverse } />
       </Home>
       <GlobalStyle />
     </ThemeProvider>
